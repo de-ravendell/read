@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Markdown Viewer</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <!-- 引入Marked.js和Highlight.js -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <style>
     body {
       font-family: 'Merriweather', serif;
@@ -55,22 +59,19 @@
       color: #f44336;
       font-weight: bold;
     }
-    /* Basic Markdown styling */
+    /* 为代码块添加语法高亮样式 */
+    pre code.hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 1em;
+    }
+    code.hljs {
+      padding: 3px 5px;
+    }
+    /* 其他Markdown元素样式 */
     #markdown-content h1, #markdown-content h2, #markdown-content h3 {
       border-bottom: 1px solid #eee;
       padding-bottom: 0.3rem;
-    }
-    #markdown-content pre {
-      background-color: #f5f5f5;
-      padding: 1rem;
-      border-radius: 4px;
-      overflow-x: auto;
-    }
-    #markdown-content code {
-      font-family: monospace;
-      background-color: #f5f5f5;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
     }
     #markdown-content blockquote {
       border-left: 4px solid #ddd;
@@ -89,6 +90,10 @@
     #markdown-content th {
       background-color: #f5f5f5;
     }
+    #markdown-content img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -102,73 +107,110 @@
   </div>
 
   <script>
-    // Function to fetch and render Markdown content
+    // 配置Marked.js
+    marked.setOptions({
+      highlight: function(code, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+          return hljs.highlight(code, { language: lang }).value;
+        }
+        return hljs.highlightAuto(code).value;
+      },
+      breaks: true,
+      gfm: true
+    });
+    
+    // 自定义渲染器，用于添加额外的HTML属性
+    const renderer = {
+      link(href, title, text) {
+        return `<a href="${href}" ${title ? `title="${title}"` : ''} target="_blank" rel="noopener noreferrer">${text}</a>`;
+      },
+      image(href, title, text) {
+        return `<img src="${href}" ${title ? `title="${title}"` : ''} alt="${text}" class="rounded shadow-md my-4">`;
+      }
+    };
+    
+    marked.use({ renderer });
+    
+    // 提取URL参数的函数
+    function getUrlParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+    
+    // 获取要加载的Markdown文件路径
+    function getMarkdownFilePath() {
+      // 优先使用URL参数中的文件路径
+      const fileParam = getUrlParam('file');
+      if (fileParam) {
+        return fileParam;
+      }
+      // 默认使用read.md
+      return 'read.md';
+    }
+    
+    // 显示文件路径
+    function displayFilePath() {
+      const filePath = getMarkdownFilePath();
+      document.title = `Markdown Viewer | ${filePath}`;
+      const fileIndicator = document.createElement('div');
+      fileIndicator.className = 'text-sm text-gray-500 mb-2';
+      fileIndicator.textContent = `File: ${filePath}`;
+      document.getElementById('markdown-content').before(fileIndicator);
+    }
+    
+    // 加载并渲染Markdown内容
     async function renderMarkdown() {
       const contentElement = document.getElementById('markdown-content');
       contentElement.className = 'loading';
-      contentElement.textContent = 'Loading content from read.md...';
+      contentElement.textContent = 'Loading content...';
       
       try {
-        const response = await fetch('read.md');
+        const filePath = getMarkdownFilePath();
+        const response = await fetch(filePath);
         
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         
         const markdownText = await response.text();
-        const htmlContent = markdownToHtml(markdownText);
+        const htmlContent = marked.parse(markdownText);
         contentElement.className = '';
         contentElement.innerHTML = htmlContent;
+        
+        // 为所有代码块应用语法高亮
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightElement(block);
+        });
+        
+        // 添加内容加载完成的动画效果
+        contentElement.style.opacity = '0';
+        contentElement.style.transition = 'opacity 0.5s ease-in-out';
+        setTimeout(() => {
+          contentElement.style.opacity = '1';
+        }, 50);
+        
       } catch (error) {
         contentElement.className = 'error';
         contentElement.textContent = `Failed to load content: ${error.message}`;
       }
     }
     
-    // Basic Markdown to HTML converter (simplified version)
-    function markdownToHtml(markdown) {
-      // Convert lines
-      markdown = markdown.replace(/\s{2}\n/g, '\n');
-
-      // Convert headings
-      markdown = markdown.replace(/#{1,6}\s+(.*$)/gm, (match, content, level) => {
-        const headingLevel = Math.min(match.match(/#/g).length, 6);
-        return `<h${headingLevel}>${content}</h${headingLevel}>`;
+    // 初始加载
+    document.addEventListener('DOMContentLoaded', () => {
+      displayFilePath();
+      renderMarkdown();
+      
+      // 刷新按钮事件监听
+      document.getElementById('refresh-btn').addEventListener('click', renderMarkdown);
+      
+      // 添加键盘快捷键：Ctrl+R 刷新
+      document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
+          e.preventDefault();
+          renderMarkdown();
+        }
       });
-      
-      // Convert bold and italic
-      markdown = markdown.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      markdown = markdown.replace(/\*(.*?)\*/g, '<em>$1</em>');
-      
-      // Convert links
-      markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-      
-      // Convert code blocks
-      markdown = markdown.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-      markdown = markdown.replace(/`([^`]+)`/g, '<code>$1</code>');
-      
-      // Convert blockquotes
-      markdown = markdown.replace(/^\>(.*$)/gm, '<blockquote>$1</blockquote>');
-      
-      // Convert lists
-      markdown = markdown.replace(/^\s*-\s+(.*$)/gm, '<li>$1</li>');
-      markdown = markdown.replace(/(<li>.*?<\/li>)/gs, '<ul>$1</ul>');
-      
-      // Convert paragraphs (add line breaks)
-      markdown = markdown.replace(/\n{2,}/g, '</p><p>');
-      markdown = '<p>' + markdown + '</p>';
-      
-      // Cleanup
-      markdown = markdown.replace(/<\/p><p>/g, '</p><p>');
-      
-      return markdown;
-    }
-    
-    // Initial render
-    renderMarkdown();
-    
-    // Refresh button event listener
-    document.getElementById('refresh-btn').addEventListener('click', renderMarkdown);
+    });
   </script>
 </body>
 </html>
