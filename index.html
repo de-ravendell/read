@@ -128,7 +128,7 @@
     // Basic Markdown to HTML converter (simplified version)
     function markdownToHtml(markdown) {
       // Convert lines
-      markdown = markdown.replace(/  \n/g, '\n');
+      markdown = markdown.replace(/\s{2}\n/g, '\n');
 
       // Convert headings
       markdown = markdown.replace(/#{1,6}\s+(.*$)/gm, (match, content, level) => {
