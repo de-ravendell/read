@@ -1,7 +1,3 @@
----
-title: read
----
-
 # Les Larmes Du Thestral
 
 *J'ustilise le crépuscule comme ma plume,*  
