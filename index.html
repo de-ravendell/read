@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Viewer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Merriweather', serif;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #markdown-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .loading {
+      color: #888;
+      font-style: italic;
+    }
+    .error {
+      color: #f44336;
+      font-weight: bold;
+    }
+    /* Basic Markdown styling */
+    #markdown-content h1, #markdown-content h2, #markdown-content h3 {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.3rem;
+    }
+    #markdown-content pre {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    #markdown-content code {
+      font-family: monospace;
+      background-color: #f5f5f5;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+    #markdown-content blockquote {
+      border-left: 4px solid #ddd;
+      padding-left: 1rem;
+      margin-left: 0;
+      color: #666;
+    }
+    #markdown-content table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    #markdown-content th, #markdown-content td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+    }
+    #markdown-content th {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Markdown Viewer</h1>
+    <button id="refresh-btn">Refresh</button>
+  </header>
+  
+  <div id="markdown-content" class="loading">
+    Loading content from read.md...
+  </div>
+
+  <script>
+    // Function to fetch and render Markdown content
+    async function renderMarkdown() {
+      const contentElement = document.getElementById('markdown-content');
+      contentElement.className = 'loading';
+      contentElement.textContent = 'Loading content from read.md...';
+      
+      try {
+        const response = await fetch('read.md');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const markdownText = await response.text();
+        const htmlContent = markdownToHtml(markdownText);
+        contentElement.className = '';
+        contentElement.innerHTML = htmlContent;
+      } catch (error) {
+        contentElement.className = 'error';
+        contentElement.textContent = `Failed to load content: ${error.message}`;
+      }
+    }
+    
+    // Basic Markdown to HTML converter (simplified version)
+    function markdownToHtml(markdown) {
+      // Convert headings
+      markdown = markdown.replace(/#{1,6}\s+(.*$)/gm, (match, content, level) => {
+        const headingLevel = Math.min(match.match(/#/g).length, 6);
+        return `<h${headingLevel}>${content}</h${headingLevel}>`;
+      });
+      
+      // Convert bold and italic
+      markdown = markdown.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      markdown = markdown.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      
+      // Convert links
+      markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+      
+      // Convert code blocks
+      markdown = markdown.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+      markdown = markdown.replace(/`([^`]+)`/g, '<code>$1</code>');
+      
+      // Convert blockquotes
+      markdown = markdown.replace(/^\>(.*$)/gm, '<blockquote>$1</blockquote>');
+      
+      // Convert lists
+      markdown = markdown.replace(/^\s*-\s+(.*$)/gm, '<li>$1</li>');
+      markdown = markdown.replace(/(<li>.*?<\/li>)/gs, '<ul>$1</ul>');
+      
+      // Convert paragraphs (add line breaks)
+      markdown = markdown.replace(/\n{2,}/g, '</p><p>');
+      markdown = '<p>' + markdown + '</p>';
+      
+      // Cleanup
+      markdown = markdown.replace(/<\/p><p>/g, '</p><p>');
+      
+      return markdown;
+    }
+    
+    // Initial render
+    renderMarkdown();
+    
+    // Refresh button event listener
+    document.getElementById('refresh-btn').addEventListener('click', renderMarkdown);
+  </script>
+</body>
+</html>
