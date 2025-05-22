@@ -170,9 +170,9 @@
             if (fileParam) {
                 fileInput.placeholder = fileParam;
                 return fileParam;
+            } else {
+                return 'README.md';
             }
-            // 默认使用.md
-            return 'README.md';
         }
 
         // 加载并渲染Markdown内容
