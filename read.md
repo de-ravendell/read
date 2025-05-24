@@ -22,7 +22,9 @@ The empty Crépuscule Manoir always brings me thoughts and sighs.
 
 I live in a large family, or at least before the most shocking incident after the fall of Voldemort took place, I lived in one.  
 
-Years ago, the manor was filled with people, my parents, my grandparents, my brothers, my sisters, my cousins, my friends. Some of them were celebrities with extraordinary feats, others were once-in-a-century geniuses. But now, there is only a single resident within the previously glorious family. As a witness to that inhuman massacre, I don't know how lucky I was that day, when I dared not breathe in that wardrobe. Hundreds, maybe thousands, of powerful wizards were killed on that day, but it seemed that they've forgotten the young boy hiding in the clothes. The air reeked of burnt spells and blood, the screams still echoing in my nightmares. Sometimes I wish I had stepped out of that wardrobe - not to fight, but to at least see their faces one last time, and embrace the not-so-horrible death in the warmth of family.  
+Years ago, the manor was filled with people, my parents, my grandparents, my brothers, my sisters, my cousins, my friends. Some of them were celebrities with extraordinary feats, others were once-in-a-century geniuses. But now, there is only a single resident within the previously glorious family. 
+
+As a witness to that inhuman massacre, I didn't know how lucky I was that day, when I dared not breathe in that wardrobe. Hundreds, maybe thousands, of powerful wizards were killed on that day, but it seemed that they've forgotten the young boy hiding in the clothes. The air reeked of burnt spells and blood, the screams still echoing in my nightmares. Sometimes I wish I had stepped out of that wardrobe - not to fight, but to at least see their faces one last time, and embrace the not-so-horrible death in the warmth of family.  
 
 Fortunately, I didn't become famous as Harry did for that, or Dumbledore may come and send me to a Muggle family to experience a harsher life, even if my life has been difficult enough since. Well, of course he wouldn't, not after he fell off the tower in Hogwarts, but I'm not sure if Professor McGonagall would do.  
 
@@ -42,7 +44,9 @@ Too far.
 
 I think that's why my creative ancestors established a Nerds' Bookstore there.  
 
-Nerds' Bookstore had become a chain store all over the important places for the De Ravendell family, ranging from Sycamore Alley, the hometown of the very first De Ravendell wizard, to a hidden room within the Ministry of Magic, which was obviously unauthorised and illegal. We did sell books in the bookstores, well, not the ones in the Ministry of Magic (we don't wanna lose that shortcut) or Sycamore Alley (or Obliviate would be needed for some Muggles), but usually with magic, especially after the sudden decrease of population. It's such a pity we weren't able to open one in Hogwarts or Hogsmeade because of the insistence of the headmasters. 
+Nerds' Bookstore had become a chain store all over the important places for the De Ravendell family, ranging from Sycamore Alley, the hometown of the very first De Ravendell wizard, to a hidden room within the Ministry of Magic, which was obviously unauthorised and illegal. 
+
+We did sell books in the bookstores, well, not the ones in the Ministry of Magic (we don't wanna lose that shortcut) or Sycamore Alley (or Obliviate would be needed for some Muggles), but usually with magic, especially after the sudden decrease of population. It's such a pity we weren't able to open one in Hogwarts or Hogsmeade because of the insistence of the headmasters. 
 
 Initially we used to legally use Floo Powder as the way of transportation. However, a shortage soon arose. To avoid suspicions, those brilliant people introduced Bloo Powder, which was as its name, blue instead of green. It not only solved the crisis but also improved the safety of the means.  
 
@@ -248,7 +252,7 @@ Seasons went by quietly and I finally I realised that I had been living with her
 
 I'd owed her so much. Her food, her company, and her gifts given when I was about to leave for Crépuscule Manoir at the age of ten.  
 
-On that day, she was still wearing her featured Spectrespecs that I counld't exactly see if her eyes were weeping.  
+On that day, she was still wearing her featured Spectrespecs that I couldn't tell if her eyes were weeping.  
 
 She gifted me two, one was the twin ravens, which she named as Hugin and Munin, the other one a small dark sphere within which some silvery strings glowed. She explained to me that the sphere was called Tenebris Orb, and was an outcome of her husband's grandfather Newton's researches of Demiguises and Thestrals. She gave it to me because she felt "an indescribable connection" between the sphere and me.  
 
@@ -324,7 +328,7 @@ For Walker, it was effortless, but for us Ravenclaws, it became a torment. Profe
 
 For experienced wizards, such spells were child’s play, but for beginners like us, they were a nightmare. Though Flitwick spent half the lesson raving about Walker’s final strike, even the quickest among us took a week to produce a barely passable Stupefy.  
 
-I prefered studying the Hufflepuff witch’s charms than spending each lesson trying to knock my partner out, however, since I didn’t really have one. 
+I preferred studying the Hufflepuff witch’s charms than spending each lesson trying to knock my partner out, however, since I didn’t really have one. 
 
 Without proper guidance, the workload doubled.  
 
@@ -378,7 +382,7 @@ As I turned back, I saw a short ghost laughing sinisterly. And he, sorry, it sta
 
 "You know there is a curfew in Hogwarts don't you, first-year? Have you realise how many points might be taken from you house if you are off your bed at nights? At least twenty!"  
 
-Didn't need his reminders, I certainly was conscious that I was violating some rules.  
+Didn't need reminders, I certainly was conscious that I was violating some rules.  
 
 Though I doubt if twenty points would have be taken away since Snape wasn't a professor anymore, I knew I'd have been in trouble if anyone had got me.  
 
@@ -394,13 +398,13 @@ That surely went on the ghost's nerves. It started shouting, "Student off his be
 
 I'd got to run.  
 
-But apparently the ghost doesn't think so. He continuously followed me to wherever I fled with his yells.  
+But apparently the ghost doesn't think so. It continuously followed me to wherever I fled with its yells.  
 
 I, a little annoyed, swiftly turned around and casted a spell I loved the most, "Fumos."  
 
 Proved by practise, stress does help learners.  
 
-It agained started with a minor outburst, but not ended with an ultimatum by the headmistress. Thick dark smoke spread with the blast, making the corridors ideal for escape.  
+It again started with a minor outburst, but not ended with an ultimatum by the headmistress. Thick dark smoke spread with the blast, making the corridors ideal for escape.  
 
 That wasn't the full thing. The ghost appeared to be blindfolded somehow, crashing into every part of the walls we were going by, crying, "Filch! Filch! What the hell are you doing! Student abusing magic! Where the hell are you!"  
 
