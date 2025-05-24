@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markdown Viewer</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入Marked.js和Highlight.js -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -62,6 +63,7 @@
             color: #ff9800;
             font-weight: bold;
         }
+        /* 为代码块添加语法高亮样式 */
         pre code.hljs {
             display: block;
             overflow-x: auto;
@@ -70,6 +72,7 @@
         code.hljs {
             padding: 3px 5px;
         }
+        /* 其他Markdown元素样式 */
         #markdown-content h1, #markdown-content h2, #markdown-content h3 {
             border-bottom: 1px solid #eee;
             padding-bottom: 0.3rem;
@@ -125,6 +128,7 @@
     </div>
 
     <script>
+        // 配置Marked.js
         marked.setOptions({
             highlight: function(code, lang) {
                 if (lang && hljs.getLanguage(lang)) {
@@ -136,6 +140,7 @@
             gfm: true
         });
 
+        // 自定义渲染器，用于添加额外的HTML属性
         const renderer = {
             link(href, title, text) {
                 return `<a href="${href}" ${title ? `title="${title}"` : ''} target="_blank" rel="noopener noreferrer">${text}</a>`;
@@ -146,6 +151,7 @@
         };
         marked.use({ renderer });
 
+        // 检查文件路径是否是Markdown文件
         function isValidMarkdownFile(filePath) {
             if (!filePath) return false;
             const lowerCasePath = filePath.toLowerCase();
@@ -164,12 +170,14 @@
             renderMarkdown(filePath);
         }
 
+        // 显示警告信息
         function displayWarning(message) {
             const contentElement = document.getElementById('markdown-content');
             contentElement.className = 'warning';
             contentElement.textContent = message;
         }
 
+        // 加载并渲染Markdown内容
         async function renderMarkdown(filePath = 'README.md') {
             const contentElement = document.getElementById('markdown-content');
             contentElement.className = 'loading';
@@ -185,16 +193,19 @@
                 contentElement.className = '';
                 contentElement.innerHTML = htmlContent;
 
+                // 为所有代码块应用语法高亮
                 document.querySelectorAll('pre code').forEach((block) => {
                     hljs.highlightElement(block);
                 });
 
+                // 添加内容加载完成的动画效果
                 contentElement.style.opacity = '0';
                 contentElement.style.transition = 'opacity 0.5s ease-in-out';
                 setTimeout(() => {
                     contentElement.style.opacity = '1';
                 }, 50);
 
+                // 更新页面标题
                 document.title = `Markdown Viewer | ${filePath}`;
             } catch (error) {
                 contentElement.className = 'error';
@@ -202,9 +213,11 @@
             }
         }
 
+        // 初始加载
         document.addEventListener('DOMContentLoaded', () => {
             renderMarkdown();
 
+            // 刷新按钮事件监听
             document.getElementById('refresh-btn').addEventListener('click', () => {
                 const fileInput = document.getElementById('file-input');
                 const filePath = fileInput.value.trim() || 'README.md';
@@ -217,6 +230,7 @@
                 renderMarkdown(filePath);
             });
 
+            // 输入框回车事件监听
             const fileInput = document.getElementById('file-input');
             fileInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
@@ -224,6 +238,7 @@
                 }
             });
 
+            // 添加键盘快捷键：Ctrl+R 刷新
             document.addEventListener('keydown', (e) => {
                 if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
                     e.preventDefault();
