@@ -1,8 +1,8 @@
 # Les Larmes Du Thestral
 
->*J'ustilise le crépuscule comme ma plume,*
->
->*pour écrire les étoiles qui emplissent le ciel.*
+*J'ustilise le crépuscule comme ma plume,*
+
+*pour écrire les étoiles qui emplissent le ciel.*
 
 ## Chapter I
 
@@ -450,8 +450,10 @@ For some reason I couldn't explain, I made a ridiculously bold decision to ventu
 
 I sneaked out, along the way through which I again managed to avoid Filch's detections and reached the room, in the gentle dirge sang by the sphere and by the wand.  
 
----not yet finished---
+Surprisingly but not to my surprise, the room appeared in a brand-new appearance. 
 
->*Je déroule le rouleau du temps,*
->
->*pour un instant qui dure pour toujours.*
+(not yet finished)
+
+*Je déroule le rouleau du temps,*
+
+*pour un instant qui dure pour toujours.*
