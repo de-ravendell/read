@@ -424,19 +424,13 @@ To my surprise, the window was suddenly opened, accompanied by two ravens that f
 
 ## Chapter IX
 
-The Scamander twins weren't talking as usual in the first few weeks. They just stared at each other silently as there were nothing to talk about.  
+The Scamander twins had not spoken for a fortnight. Lorcan spent midnight hours poring over the Quibbler issues his mother had sent, while Lysander polished the butterbeer cork necklace Luna had gifted him. I clutched the Tenebris Orb on the edge of my four-poster, its internal silver threads trembling like wounded raven wings, spilling cold light over the Daily Prophet in my lap. The yellowed paper read: "Noted Magizoologist Found Dead—Cause Unexplained, Family Declines Comment."  
 
-And I kept Tenebris Orb in hands, sitting on the gloomy blue bed, listening to the lullaby sang by the sphere for the dead, trying to find some comfort from the relic of hers.  
-
-We all kept quiet to commemorated Luna Lovegood-Scamander.  
+We all kept quiet to commemorate Luna Lovegood-Scamander.  
 
 I wasn't recovered from the sorrow until something even more awful happened.  
 
-That was a real threat.  
-
-Heard from some Hufflepuffs, a first-year student in their house was possessed after he went to the duelling field by his own. He just couldn't stop laughing in the hospital wing.  
-
-Madam Pomfrey had no idea what to do, and it was Professor Slughorn who came up with the idea of making a potion to put him to sleep.  
+Whispers echoed through the stone corridors about the Hufflepuff first-year: since his personal visit to the duelling chamber, silver spiderweb veins had spread across his irises, and he now giggled incessantly while reciting verses from The Tales of Beedle the Bard.  
 
 Was it the consequence if the dark giant had made its attack?  
 
@@ -450,7 +444,13 @@ For some reason I couldn't explain, I made a ridiculously bold decision to ventu
 
 I sneaked out, along the way through which I again managed to avoid Filch's detections and reached the room, in the gentle dirge sang by the sphere and by the wand.  
 
+My soles whispered like moth wings against the flagstones as I counted the seventh step’s crack and rounded the corner and went by the door hinges that groaned like dying men. 
+
 Surprisingly but not to my surprise, the room appeared in a brand-new appearance. 
+
+In a flicker of blue flame, the scene shifted. Moments later, I stood in the study of my ancestral manor. Thousands of gilt-edged tomes towered to the vaulted ceiling, glowing like aged honey in the chandelier’s light. A half-raven feather was embedded in the oak desk, its curve mirroring our family crest’s "raven clutching moon" motif. Beside it, the engraved motto "Le crépuscule est l'aube de la nuit" glimmered faintly, a bittersweet solace to lonely orphans.  
+
+There were a pile of books on the table, with silvery light glowing softly, as if it was waving its hands to me. Suddenly, the topmost parchment volume flipped open.  
 
 (not yet finished)
 
