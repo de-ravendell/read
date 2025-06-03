@@ -116,7 +116,6 @@
 <body>
     <header>
         <h1>Markdown Viewer</h1>
-        <button id="refresh-btn">Refresh</button>
     </header>
     <div class="file-input-container">
         <span>File: </span>
@@ -161,11 +160,6 @@
         function read() {
             const fileInput = document.getElementById('file-input');
             const filePath = fileInput.value.trim() || 'README.md';
-            
-            if (!isValidMarkdownFile(filePath)) {
-                displayWarning(`Invalid file: ${filePath}. Please provide a .md or .markdown file.`);
-                return;
-            }
             
             renderMarkdown(filePath);
         }
@@ -233,20 +227,6 @@
                 }
             });
 
-            // 添加键盘快捷键：Ctrl+R 刷新
-            document.addEventListener('keydown', (e) => {
-                if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
-                    e.preventDefault();
-                    const filePath = fileInput.value.trim() || 'README.md';
-                    
-                    if (!isValidMarkdownFile(filePath)) {
-                        displayWarning(`Invalid file: ${filePath}. Please provide a .md or .markdown file.`);
-                        return;
-                    }
-                    
-                    renderMarkdown(filePath);
-                }
-            });
         });
     </script>
 </body>
