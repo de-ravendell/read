@@ -352,7 +352,9 @@ I didn't manage to go back after finishing shopping in Diagon Alley.
 
 In a blue flame I appeared in a completely unfamiliar place. It appeared that I was in a dungeon where no lights could ever access.  
 
-With my new wand in hand, I tried casting the charm that I'd read millions of times in my father Gale's memoir of his adventures. "Lumos!"  
+With my new wand in hand, I tried casting the charm that I'd read millions of times in my father Gale's notes of his experiments on magical creatures. 
+
+"Lumos!"  
 
 But it wasn't the bright light that was lit up on the wand tip. Instead, a dim silvery spot glowed.  
 
@@ -450,7 +452,23 @@ Surprisingly but not to my surprise, the room appeared in a brand-new appearance
 
 In a flicker of blue flame, the scene shifted. Moments later, I stood in the study of my ancestral manor. Thousands of gilt-edged tomes towered to the vaulted ceiling, glowing like aged honey in the chandelier’s light. A half-raven feather was embedded in the oak desk, its curve mirroring our family crest’s "raven clutching moon" motif. Beside it, the engraved motto "Le crépuscule est l'aube de la nuit" glimmered faintly, a bittersweet solace to lonely orphans.  
 
-There were a pile of books on the table, with silvery light glowing softly, as if it was waving its hands to me. Suddenly, the topmost parchment volume flipped open.  
+There was a pile of books on the table, with silvery light glowing softly, as if it was waving its hands to me. Suddenly, the topmost parchment volume flipped open.  
+
+## Chapter X
+
+Without Magimap, I would never be so familiar with Hogwarts. 
+
+That trip to Room of Requirement made me realise that there was a Bloo Station built in Hogwarts. It didn't appear to be a fireplace, but hid behind a door. 
+
+If a member of De Ravendell family went through the door while telling themselves that they required some knowledge, or they had to go to Crépuscule Manoir, they would be transported to the study in the manor in blue flames. And a mirror in the study worked the same. 
+
+The gain of these knowledge could all be attributed to Magimap, which, strangely enough, felt just like my wand, as if it was made of the same materials as my maple wand instead of a piece of parchment.  
+
+Read in a journal of my mother Mary that was placed on the table that night, the map was inspired by one named as Marauder's Map, which was owned by a friend of her brother's wife Luna.  
+
+The only difference was that Marauder's Map were only useful for secret-passages-travellers and night-walkers in Hogwarts, while Magimap could help all adventurers at any place. 
+
+Having no idea about how it worked, I assumed that it could speedily learn how the environment was structured and where others are.
 
 (not yet finished)
 
