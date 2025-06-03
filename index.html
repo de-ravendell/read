@@ -221,12 +221,7 @@
             document.getElementById('refresh-btn').addEventListener('click', () => {
                 const fileInput = document.getElementById('file-input');
                 const filePath = fileInput.value.trim() || 'README.md';
-                /*
-                if (!isValidMarkdownFile(filePath)) {
-                    displayWarning(`Invalid file: ${filePath}. Please provide a .md or .markdown file.`);
-                    return;
-                }
-                */
+                
                 renderMarkdown(filePath);
             });
 
